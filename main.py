@@ -2,6 +2,8 @@ import argparse
 from random import choice
 from string import ascii_letters, digits
 
+import pyperclip
+
 SPECIAL_CHARS = '!@#$%^&*()_+=-{}[]|\\;:\'",.<>/?'
 
 
@@ -22,6 +24,8 @@ def main():
 
     password = generate_password(args.length)
     print(password)
+    pyperclip.copy(password)
+    print("(Пароль скопирован в буфер обмена!)")
 
 
 if __name__ == '__main__':
